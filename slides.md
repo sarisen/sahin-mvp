@@ -108,7 +108,7 @@ layout: two-cols
 
 # Why this stack?
 
-<div class="chips flex-col mt-6 text-lg">
+<div class="chips flex-col items-start mt-6 text-lg">
   <span class="pill" style="--c:#f97316">minimal moving parts</span>
   <span class="pill" style="--c:#22c55e">mostly open-source</span>
   <span class="pill" style="--c:#3b82f6">fast to build</span>
@@ -181,7 +181,7 @@ layout: two-cols
 
 # Redis Usage
 
-<div class="chips flex-col mt-6 text-lg">
+<div class="chips flex-col items-start mt-6 text-lg">
   <span class="pill" style="--c:#f97316">Cache</span>
   <span class="pill" style="--c:#eab308">Rate limiting</span>
   <span class="pill" style="--c:#ec4899">BullMQ queue backend</span>
@@ -193,7 +193,7 @@ layout: two-cols
 
 # MinIO Usage
 
-<div class="chips flex-col mt-6 text-lg">
+<div class="chips flex-col items-start mt-6 text-lg">
   <span class="pill" style="--c:#3b82f6">Images</span>
   <span class="pill" style="--c:#38bdf8">Documents</span>
   <span class="pill" style="--c:#22c55e">Exports</span>
@@ -230,6 +230,7 @@ For MVP, we keep monitoring simple: errors + uptime + structured logs.
 
 ---
 layout: center
+class: text-center
 ---
 
 # What We Intentionally Exclude From MVP
