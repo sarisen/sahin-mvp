@@ -123,7 +123,7 @@ layout: center
 
 # Request Flow
 
-```mermaid {scale: 0.8}
+```mermaid {scale: 0.58}
 sequenceDiagram
     participant Client as 📱 Client
     participant API as 🔥 Hono API
