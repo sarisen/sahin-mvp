@@ -15,6 +15,8 @@ routerMode: hash
 
 # MVP Backend Architecture
 
+<div class="text-2xl font-semibold mt-2" style="color:#38bdf8">unicathlete-mvp</div>
+
 Modern, open-source focused, production-ready MVP stack
 
 <div class="mt-10 text-lg opacity-70">
