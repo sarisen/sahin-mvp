@@ -23,6 +23,7 @@ Hono • PostgreSQL • Redis • BullMQ • MinIO • GlitchTip • Uptime Kuma
 
 ---
 layout: center
+class: text-center
 ---
 
 # Goal
@@ -40,6 +41,7 @@ Build a backend that is simple enough for MVP, but clean enough to scale.
 
 ---
 layout: center
+class: text-center
 ---
 
 # Architecture Overview
@@ -119,6 +121,7 @@ layout: two-cols
 
 ---
 layout: center
+class: text-center
 ---
 
 # Request Flow
@@ -144,6 +147,7 @@ sequenceDiagram
 
 ---
 layout: center
+class: text-center
 ---
 
 # Background Jobs
@@ -203,6 +207,7 @@ layout: two-cols
 
 ---
 layout: center
+class: text-center
 ---
 
 # Observability
@@ -250,6 +255,7 @@ Less infrastructure. Faster MVP.
 
 ---
 layout: center
+class: text-center
 ---
 
 # Deployment
