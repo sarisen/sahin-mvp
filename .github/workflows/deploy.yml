@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build slides
-        run: npm run build -- --base /sahin-mvp/ --out dist
+        run: npm run build -- --base /unicathlete-mvp/ --out dist
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
