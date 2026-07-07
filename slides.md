@@ -20,18 +20,6 @@ Modern, open-source focused, production-ready MVP stack
 Hono • PostgreSQL • Redis • BullMQ • MinIO • GlitchTip • Uptime Kuma
 </div>
 
-<style>
-.pill {
-  display: inline-flex; align-items: center; gap: 0.45rem;
-  padding: 0.35rem 0.9rem; border-radius: 0.6rem; font-weight: 600;
-  color: var(--c, #64748b);
-  background: color-mix(in srgb, var(--c, #64748b) 16%, transparent);
-  border: 1px solid color-mix(in srgb, var(--c, #64748b) 45%, transparent);
-}
-.pill.muted { opacity: 0.75; font-weight: 500; }
-.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-</style>
-
 ---
 layout: center
 ---
@@ -41,12 +29,12 @@ layout: center
 Build a backend that is simple enough for MVP, but clean enough to scale.
 
 <div class="chips justify-center mt-10 text-xl">
-  <span class="pill" style="--c:#f97316">⚡ Fast development</span>
-  <span class="pill" style="--c:#22c55e">💰 Low infrastructure cost</span>
-  <span class="pill" style="--c:#3b82f6">🌐 Open-source first</span>
-  <span class="pill" style="--c:#38bdf8">🚀 Easy deployment</span>
-  <span class="pill" style="--c:#a855f7">🛡️ Type-safe backend</span>
-  <span class="pill" style="--c:#14b8a6">📊 Observable from day one</span>
+  <span class="pill" style="--c:#f97316">Fast development</span>
+  <span class="pill" style="--c:#22c55e">Low infrastructure cost</span>
+  <span class="pill" style="--c:#3b82f6">Open-source first</span>
+  <span class="pill" style="--c:#38bdf8">Easy deployment</span>
+  <span class="pill" style="--c:#a855f7">Type-safe backend</span>
+  <span class="pill" style="--c:#14b8a6">Observable from day one</span>
 </div>
 
 ---
