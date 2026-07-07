@@ -15,6 +15,16 @@
   font-weight: 500;
 }
 
+.pill.excluded {
+  color: #94a3b8;
+  background: color-mix(in srgb, #64748b 12%, transparent);
+  border: 1px solid color-mix(in srgb, #64748b 35%, transparent);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, #94a3b8 60%, transparent);
+  font-weight: 500;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;

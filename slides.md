@@ -182,11 +182,11 @@ layout: two-cols
 # Redis Usage
 
 <div class="chips flex-col mt-6 text-lg">
-  <span class="pill" style="--c:#dc2626">Cache</span>
-  <span class="pill" style="--c:#dc2626">Rate limiting</span>
-  <span class="pill" style="--c:#dc2626">BullMQ queue backend</span>
-  <span class="pill" style="--c:#dc2626">Temporary data</span>
-  <span class="pill" style="--c:#dc2626">Future WebSocket scaling</span>
+  <span class="pill" style="--c:#f97316">Cache</span>
+  <span class="pill" style="--c:#eab308">Rate limiting</span>
+  <span class="pill" style="--c:#ec4899">BullMQ queue backend</span>
+  <span class="pill" style="--c:#a855f7">Temporary data</span>
+  <span class="pill" style="--c:#14b8a6">Future WebSocket scaling</span>
 </div>
 
 ::right::
@@ -194,11 +194,11 @@ layout: two-cols
 # MinIO Usage
 
 <div class="chips flex-col mt-6 text-lg">
-  <span class="pill" style="--c:#e11d48">Images</span>
-  <span class="pill" style="--c:#e11d48">Documents</span>
-  <span class="pill" style="--c:#e11d48">Exports</span>
-  <span class="pill" style="--c:#e11d48">Attachments</span>
-  <span class="pill" style="--c:#e11d48">S3-compatible object storage</span>
+  <span class="pill" style="--c:#3b82f6">Images</span>
+  <span class="pill" style="--c:#38bdf8">Documents</span>
+  <span class="pill" style="--c:#22c55e">Exports</span>
+  <span class="pill" style="--c:#14b8a6">Attachments</span>
+  <span class="pill" style="--c:#a855f7">S3-compatible object storage</span>
 </div>
 
 ---
@@ -235,12 +235,12 @@ layout: center
 # What We Intentionally Exclude From MVP
 
 <div class="chips justify-center mt-10 text-xl">
-  <span class="pill muted" style="--c:#ef4444">Microservices</span>
-  <span class="pill muted" style="--c:#ef4444">Kubernetes</span>
-  <span class="pill muted" style="--c:#ef4444">Event bus</span>
-  <span class="pill muted" style="--c:#ef4444">OpenTelemetry</span>
-  <span class="pill muted" style="--c:#ef4444">Prometheus / Grafana / Loki</span>
-  <span class="pill muted" style="--c:#ef4444">Distributed tracing</span>
+  <span class="pill excluded">Microservices</span>
+  <span class="pill excluded">Kubernetes</span>
+  <span class="pill excluded">Event bus</span>
+  <span class="pill excluded">OpenTelemetry</span>
+  <span class="pill excluded">Prometheus / Grafana / Loki</span>
+  <span class="pill excluded">Distributed tracing</span>
 </div>
 
 <div class="mt-10 text-2xl">
