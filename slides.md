@@ -17,11 +17,86 @@ routerMode: hash
 
 <div class="text-2xl font-semibold mt-2" style="color:#38bdf8">unicathlete-mvp</div>
 
-Modern, open-source focused, production-ready MVP stack
+Technical stack & architecture for the UnicAthlete MVP
 
 <div class="mt-10 text-lg opacity-70">
 Hono • PostgreSQL • Redis • BullMQ • MinIO • GlitchTip • Uptime Kuma
 </div>
+
+---
+layout: default
+---
+
+# Executive Summary
+
+<div class="lead mt-4">
+This document details the proposed technical stack and architecture for the
+<b>UnicAthlete MVP</b>. The goal is a robust backend that meets four objectives:
+rapid development, low infrastructure cost, an open-source focus, and scalability.
+</div>
+
+<div class="chips mt-6 text-base">
+  <span class="pill" style="--c:#f97316">Rapid development</span>
+  <span class="pill" style="--c:#22c55e">Low infrastructure cost</span>
+  <span class="pill" style="--c:#3b82f6">Open-source focus</span>
+  <span class="pill" style="--c:#38bdf8">Scalability</span>
+</div>
+
+<div class="lead mt-6">
+Aligned with the UnicAthlete concept, the plan offers rational, cost-effective
+solutions in critical areas — <b>data integrity</b>, <b>gamification</b>, and
+<b>AI integration</b>. Discredited technologies like blockchain are avoided; instead
+we adopt modern, sustainable approaches such as <b>Immutable Ledgers</b> and
+<b>Verifiable Credentials</b>. Due to cost sensitivity, video analysis is positioned
+as the <b>final layer</b> of the verification process.
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p>This document details the proposed technical stack and architecture for the UnicAthlete MVP (Minimum Viable Product). Our goal is to build a robust backend infrastructure that meets the objectives of rapid development, low infrastructure cost, an open-source focus, and scalability.</p>
+<p>The plan, aligned with the current UnicAthlete concept, offers rational and cost-effective solutions in critical areas such as data integrity, gamification, and artificial intelligence integration. Notably, discredited technologies like blockchain have been avoided; instead, modern and sustainable approaches such as Immutable Ledgers and Verifiable Credentials have been adopted. Due to cost sensitivity, video analysis is positioned as the final layer of the verification process.</p>
+</div>
+</details>
+
+---
+layout: default
+---
+
+# 1. Introduction
+
+<div class="lead mt-4">
+The UnicAthlete MVP is a platform where <b>athletes</b> showcase their talents,
+<b>scouts</b> discover potential, and <b>coaches</b> track athlete development.
+</div>
+
+<div class="cards mt-8" style="grid-template-columns: repeat(3, 1fr);">
+  <div class="card" style="--c:#3b82f6">
+    <div class="card-title">Athletes</div>
+    <div class="card-body">Showcase talent and build a verifiable performance profile.</div>
+  </div>
+  <div class="card" style="--c:#a855f7">
+    <div class="card-title">Scouts</div>
+    <div class="card-body">Discover and evaluate emerging talent with trusted data.</div>
+  </div>
+  <div class="card" style="--c:#22c55e">
+    <div class="card-title">Coaches</div>
+    <div class="card-body">Track development over time and guide progression.</div>
+  </div>
+</div>
+
+<div class="note mt-8">
+This plan explains the backend architecture, the chosen technologies, and the
+rationale behind each choice. Primary objective: deliver value quickly on a clean,
+scalable structure that supports future growth and evolution.
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p>The UnicAthlete MVP is designed as a platform where athletes can showcase their talents, scouts can discover potential talents, and coaches can track athlete development. This technical implementation plan explains the backend architecture of the MVP, the chosen technologies, and the rationale behind these choices. Our primary objectives are to deliver value quickly while establishing a clean and scalable structure that allows for future growth and evolution.</p>
+</div>
+</details>
 
 ---
 layout: center
@@ -41,12 +116,22 @@ Build a backend that is simple enough for MVP, but clean enough to scale.
   <span class="pill" style="--c:#14b8a6">Observable from day one</span>
 </div>
 
+<div class="note mt-10 mx-auto" style="max-width: 46rem;">
+Deliver value quickly while establishing a clean, scalable structure that allows
+for future growth and evolution.
+</div>
+
 ---
 layout: center
 class: text-center
 ---
 
-# Architecture Overview
+# 2. Architecture Overview
+
+<div class="note mx-auto mb-4" style="max-width: 48rem;">
+A modular, layered design where each component has a single responsibility and can
+be developed and scaled independently.
+</div>
 
 ```mermaid {scale: 0.5}
 flowchart TD
@@ -77,6 +162,106 @@ flowchart TD
     class G worker;
     class H obs;
 ```
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p>The backend architecture of the UnicAthlete MVP is designed with a modular and layered approach. This structure ensures that each component has a specific responsibility and can be developed and scaled independently. The overall architecture consists of the following main layers: Client Apps, API Layer (Hono API), Business Layer, Data Layer, Background Workers, and Observability.</p>
+</div>
+</details>
+
+---
+layout: default
+---
+
+# Architecture Layers
+
+<div class="cards mt-2" style="grid-template-columns: 1fr 1fr;">
+  <div class="card" style="--c:#3b82f6">
+    <div class="card-title">Client Apps</div>
+    <div class="card-body">User interfaces built with React (Web), SwiftUI (iOS), and Kotlin (Android).</div>
+  </div>
+  <div class="card" style="--c:#f97316">
+    <div class="card-title">API Layer — Hono</div>
+    <div class="card-body">A fast, lightweight framework that connects client apps to backend services.</div>
+  </div>
+  <div class="card" style="--c:#8b5cf6">
+    <div class="card-title">Business Layer</div>
+    <div class="card-body">Core processes: user management, payments, notifications, and AI integrations.</div>
+  </div>
+  <div class="card" style="--c:#10b981">
+    <div class="card-title">Data Layer</div>
+    <div class="card-body">PostgreSQL (relational), Redis (cache & queue), MinIO (object storage).</div>
+  </div>
+  <div class="card" style="--c:#ec4899">
+    <div class="card-title">Background Workers</div>
+    <div class="card-body">Async work: email, push, AI processing, PDF/report exports, scheduled tasks.</div>
+  </div>
+  <div class="card" style="--c:#64748b">
+    <div class="card-title">Observability</div>
+    <div class="card-body">GlitchTip (error tracking) and Uptime Kuma (service status) watch system health.</div>
+  </div>
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p><b>Client Apps:</b> User interfaces developed using React (Web), SwiftUI (iOS), and Kotlin (Android).</p>
+<p><b>API Layer (Hono API):</b> A fast and lightweight API framework that facilitates communication between client applications and backend services.</p>
+<p><b>Business Layer:</b> Houses core business processes such as user management, payment processing, notifications, and AI integrations.</p>
+<p><b>Data Layer:</b> Includes components like PostgreSQL (relational database), Redis (caching and queue management), and MinIO (object storage).</p>
+<p><b>Background Workers:</b> Asynchronously executes long-running or intensive operations such as email delivery, push notifications, AI processing, PDF/report exports, and scheduled tasks.</p>
+<p><b>Observability:</b> GlitchTip (error tracking) and Uptime Kuma (service status monitoring) are used to monitor system health and performance.</p>
+</div>
+</details>
+
+---
+layout: default
+---
+
+# 3. Core Technology Stack & Rationale
+
+<div class="lead mt-3">The stack is guided by six core principles:</div>
+
+<div class="cards mt-5" style="grid-template-columns: 1fr 1fr;">
+  <div class="card" style="--c:#f97316">
+    <div class="card-title">Minimal moving parts</div>
+    <div class="card-body">Reduce complexity, increase development speed.</div>
+  </div>
+  <div class="card" style="--c:#22c55e">
+    <div class="card-title">Mostly open-source</div>
+    <div class="card-body">Lower costs, benefit from community support.</div>
+  </div>
+  <div class="card" style="--c:#3b82f6">
+    <div class="card-title">Rapid development</div>
+    <div class="card-body">Bring the MVP to market quickly.</div>
+  </div>
+  <div class="card" style="--c:#38bdf8">
+    <div class="card-title">Easy self-hosting</div>
+    <div class="card-body">Keep infrastructure costs under control.</div>
+  </div>
+  <div class="card" style="--c:#a855f7">
+    <div class="card-title">No premature microservices</div>
+    <div class="card-body">Start monolithic; scale only when needed.</div>
+  </div>
+  <div class="card" style="--c:#14b8a6">
+    <div class="card-title">Scale without rewrites</div>
+    <div class="card-body">Chosen tech natively supports future growth.</div>
+  </div>
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p>The technology stack selected for the UnicAthlete MVP is based on the following core principles:</p>
+<p><b>Minimal Moving Parts:</b> To reduce complexity and increase development speed.</p>
+<p><b>Mostly Open-Source:</b> To lower costs and benefit from community support.</p>
+<p><b>Rapid Development:</b> To bring the MVP to market quickly.</p>
+<p><b>Easy Self-Hosting:</b> To keep infrastructure costs under control.</p>
+<p><b>Avoiding Premature Microservices:</b> Starting with a monolithic structure to avoid unnecessary complexity, scaling only when needed.</p>
+<p><b>Scalability Without Rewrites:</b> Ensuring that initially selected technologies can natively support future growth.</p>
+</div>
+</details>
 
 ---
 layout: two-cols
@@ -120,6 +305,71 @@ layout: two-cols
   <span class="pill" style="--c:#a855f7">no premature microservices</span>
   <span class="pill" style="--c:#14b8a6">can scale later without rewriting</span>
 </div>
+
+---
+layout: default
+---
+
+# 3.1 API & Data Validation
+
+<div class="cards mt-4">
+  <div class="card" style="--c:#f97316">
+    <div class="card-title">Hono — API Framework</div>
+    <div class="card-body">Lightweight, fast, web-standard-compliant. High performance even in edge environments — a perfect fit for rapid development and low resource consumption.</div>
+  </div>
+  <div class="card" style="--c:#3b82f6">
+    <div class="card-title">Zod — Data Validation</div>
+    <div class="card-body">Schema-based validation fully compatible with TypeScript. Guarantees the reliability and type safety of API requests, catching errors at an early stage.</div>
+  </div>
+  <div class="card" style="--c:#ef4444">
+    <div class="card-title">Better Auth — Authentication</div>
+    <div class="card-body">Secure, scalable authentication. Manages user sessions and authorization processes.</div>
+  </div>
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p><b>Hono (API Framework):</b> A lightweight, fast, and web-standard-compliant API framework. It offers high performance even in edge environments. It aligns perfectly with our goals of rapid development and low resource consumption.</p>
+<p><b>Zod (Data Validation):</b> A schema-based data validation library fully compatible with TypeScript. It ensures the reliability and type safety of incoming API requests and data structures, catching errors at an early stage.</p>
+<p><b>Better Auth (Authentication):</b> Provides secure and scalable authentication solutions. It manages user sessions and authorization processes.</p>
+</div>
+</details>
+
+---
+layout: default
+---
+
+# 3.2 Data Management
+
+<div class="cards mt-3" style="grid-template-columns: 1fr 1fr;">
+  <div class="card" style="--c:#38bdf8">
+    <div class="card-title">PostgreSQL — Database</div>
+    <div class="card-body">Robust, reliable, open-source relational database. A secure long-term choice with strong scalability and community support.</div>
+  </div>
+  <div class="card" style="--c:#22c55e">
+    <div class="card-title">Drizzle — ORM</div>
+    <div class="card-body">Modern ORM with end-to-end TypeScript type safety. Simplifies database interactions and boosts efficiency.</div>
+  </div>
+  <div class="card" style="--c:#dc2626">
+    <div class="card-title">Redis — Cache & Queue</div>
+    <div class="card-body">High-performance key-value store: caching, rate limiting, BullMQ backend, ephemeral data, future WebSocket scaling.</div>
+  </div>
+  <div class="card" style="--c:#e11d48">
+    <div class="card-title">MinIO — Object Storage</div>
+    <div class="card-body">S3-compatible, open-source storage for images, documents, and exports. Cloud-provider independence and cost efficiency.</div>
+  </div>
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p><b>PostgreSQL (Database):</b> A robust, reliable, and open-source database for relational data. Thanks to its extensive feature set, scalability, and robust community support, it represents a secure long-term solution.</p>
+<p><b>Drizzle ORM (Object-Relational Mapper):</b> A modern ORM that provides end-to-end type safety with TypeScript. It simplifies database interactions and increases development efficiency.</p>
+<p><b>Redis (Cache and Queue):</b> A high-performance key-value store. It will be utilized for Caching (reduces database load and speeds up response times), Rate Limiting (controls request rates to prevent API abuse), BullMQ Queue Backend (manages background jobs), Ephemeral Data Storage (fast storage for short-lived data), and Future WebSocket Scaling (foundation for real-time communication).</p>
+<p><b>MinIO (Object Storage):</b> An S3-compatible, open-source object storage solution. It is used for storing large files such as images, documents, exported reports, and other attachments. It provides cloud provider independence and cost efficiency.</p>
+</div>
+</details>
 
 ---
 layout: center
@@ -177,9 +427,22 @@ flowchart LR
     class D,E,F,G,H task;
 ```
 
-<div class="mt-8 text-xl opacity-75">
+<div class="mt-6 text-xl opacity-75">
 API returns fast. Workers process heavy tasks asynchronously.
 </div>
+
+<div class="note mx-auto mt-4" style="max-width: 50rem;">
+<b>BullMQ</b> — a robust, Redis-based queue — decouples long-running operations from
+API requests, while <b>Pino</b> provides fast, low-overhead structured logging.
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p><b>BullMQ (Message Queue):</b> A robust, Redis-based queue system for managing background jobs. It increases the system's responsiveness by decoupling long-running operations (email delivery, AI processing, PDF generation) from API requests.</p>
+<p><b>Pino (Logging):</b> A fast and low-overhead Node.js logging library. It provides highly performant logging for production environments.</p>
+</div>
+</details>
 
 ---
 layout: two-cols
@@ -231,9 +494,59 @@ flowchart TD
     class B,C,D obs;
 ```
 
-<div class="mt-8 text-xl opacity-75">
+<div class="mt-6 text-xl opacity-75">
 For MVP, we keep monitoring simple: errors + uptime + structured logs.
 </div>
+
+<div class="note mx-auto mt-4" style="max-width: 52rem;">
+<b>GlitchTip</b> — an open-source, Sentry-compatible platform — captures and reports
+errors in real time, while <b>Uptime Kuma</b> tracks the availability and response
+time of active services.
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p><b>GlitchTip (Error Tracking):</b> An open-source error tracking platform (Sentry compatible). It captures and reports errors in the application in real-time.</p>
+<p><b>Uptime Kuma (Service Status Monitoring):</b> An open-source, self-hostable service status monitoring tool. It tracks the uptime and performance of active services.</p>
+</div>
+</details>
+
+---
+layout: default
+---
+
+# Trust & Verification
+
+<div class="lead mt-3">
+We chose modern, sustainable approaches over hype — no blockchain.
+</div>
+
+<div class="cards mt-5" style="grid-template-columns: 1fr 1fr;">
+  <div class="card" style="--c:#94a3b8">
+    <div class="card-title" style="text-decoration: line-through;">Blockchain</div>
+    <div class="card-body">Discredited and unnecessarily costly for this use case — deliberately avoided.</div>
+  </div>
+  <div class="card" style="--c:#38bdf8">
+    <div class="card-title">Immutable Ledgers</div>
+    <div class="card-body">Tamper-evident records that protect data integrity without blockchain overhead.</div>
+  </div>
+  <div class="card" style="--c:#a855f7">
+    <div class="card-title">Verifiable Credentials</div>
+    <div class="card-body">Cryptographically verifiable claims for trusted athlete achievements.</div>
+  </div>
+  <div class="card" style="--c:#ec4899">
+    <div class="card-title">Video Analysis — final layer</div>
+    <div class="card-body">Due to cost sensitivity, positioned as the last step of the verification process.</div>
+  </div>
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p>Notably, discredited technologies like blockchain have been avoided; instead, modern and sustainable approaches such as Immutable Ledgers and Verifiable Credentials have been adopted. These protect data integrity without blockchain overhead and provide cryptographically verifiable claims for trusted athlete achievements. Due to cost sensitivity, video analysis is positioned as the final layer of the verification process.</p>
+</div>
+</details>
 
 ---
 layout: center
@@ -284,6 +597,38 @@ flowchart TD
     class C deploy;
     class D,E,F,G,H,I,J svc;
 ```
+
+---
+layout: default
+---
+
+# 4. Conclusion
+
+<div class="lead mt-4">
+This plan builds the UnicAthlete MVP on a <b>robust, scalable, and cost-effective</b>
+backend. The selected technologies and architectural approaches support rapid
+development and future growth, while remaining critical to achieving
+<b>data integrity</b> and <b>optimal user interaction</b>.
+</div>
+
+<div class="lead mt-6">
+This blueprint positions UnicAthlete as an innovative and structurally sound platform
+in the field of <b>sports talent discovery and development</b>.
+</div>
+
+<div class="chips mt-8 text-base">
+  <span class="pill" style="--c:#22c55e">Robust</span>
+  <span class="pill" style="--c:#3b82f6">Scalable</span>
+  <span class="pill" style="--c:#f97316">Cost-effective</span>
+  <span class="pill" style="--c:#a855f7">Data integrity</span>
+</div>
+
+<details class="fulltext">
+<summary>Full text</summary>
+<div class="ft-body">
+<p>This technical implementation plan ensures that the UnicAthlete MVP is built upon a robust, scalable, and cost-effective backend infrastructure. The selected technologies and architectural approaches support rapid development and future growth while being critical to achieving data integrity and optimal user interaction goals. This blueprint will help position UnicAthlete as an innovative and structurally sound platform in the field of sports talent discovery and development.</p>
+</div>
+</details>
 
 ---
 layout: center
